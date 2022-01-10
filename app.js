@@ -2,7 +2,7 @@
 
 const { crearArchivo, listarTabla } = require('./multiplicar/multiplicar');
 const argv = require('./config/yargs')
-require('colors');
+
 
 
 console.log(argv);

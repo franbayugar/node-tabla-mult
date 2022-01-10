@@ -1,13 +1,13 @@
 // requireds
 const fs = require('fs');
 const { yargs } = require('yargs');
-const colors = require('colors')
+
 
 let listarTabla = (base, limite) => {
 
-    console.log('=================='.green);
+    console.log('==================');
     console.log(`tabla de ${ base }`);
-    console.log('=================='.green);
+    console.log('==================');
 
     for (let i = 1; i <= limite; i++) {
         console.log(`${ base } * ${ i } = ${ base * i }`)
@@ -27,17 +27,17 @@ let crearArchivo = (base =5, listar = false, hasta = 10) => {
 
         let data = '';
 
-        for (let i = 1; i <= limite; i++) {
+        for (let i = 1; i <= hasta; i++) {
             data += `${ base } * ${ i } = ${ base * i }\n`;
         }
 
 
-        fs.writeFile(`./output/tabla-${ base }-al-${ limite }.txt`, data, (err) => {
+        fs.writeFile(`./output/tabla-${ base }-al-${ hasta }.txt`, data, (err) => {
 
             if (err)
                 reject(err)
             else
-                resolve(`tabla-${ base }-al-${ limite }.txt`);
+                resolve(`tabla-${ base }-al-${ hasta }.txt`);
 
         });
 
